@@ -1,5 +1,4 @@
 import auth0 from "auth0-js";
-import RemoveCookie from "../removeCookie";
 
 const createAuth0Instance = () => {
   return new auth0.WebAuth({
@@ -29,7 +28,7 @@ const handleAuthentication = (cb) => {
   });
 };
 
-    const setSession = (authResult) => {
+const setSession = (authResult) => {
   let expiresAt = JSON.stringify(
     authResult.expiresIn * 1000 + new Date().getTime()
   );
@@ -39,19 +38,11 @@ const handleAuthentication = (cb) => {
   localStorage.setItem("expires_at", expiresAt);
 };
 
-
-
-
 const logout = () => {
   localStorage.removeItem("access_token");
   localStorage.removeItem("id_token");
   localStorage.removeItem("expires_at");
-
-
-  RemoveCookie('auth0')
-
-
-  
+  createAuth0Instance().logout();
 };
 
 const isAuthenticated = () => {

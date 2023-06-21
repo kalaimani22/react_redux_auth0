@@ -1,13 +1,47 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
-  background-color: #222;
+  background-color: #6464e1;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 24px;
+}
+
+.profile-wrap table {
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.profile-wrap table th,
+.profile-wrap table td {
+  text-transform: capitalize;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.profile-wrap table td img {
+  border-radius: 50%;
+  width: 80px;
+}
+
+button {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #6464e1;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.content-wrap {
+  padding: 20px;
+}
+
+.btn-wrap {
+  text-align: right;
 }

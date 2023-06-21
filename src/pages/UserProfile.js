@@ -1,16 +1,30 @@
-import React from 'react';
+import React from "react";
 
-const UserProfile = ( props ) => (
-    <div>
-        <h1>{props.name}</h1>
-        <div>
-            <img src={props.picture} alt="profile" />
-            <div>
-                <h3>{props.nickname}</h3>
-            </div>
-            <pre>{JSON.stringify(props, null, 2)}</pre>
-        </div>
-    </div>
+const UserProfile = (props) => (
+  <div className="profile-wrap">
+    <h3>{props.name}</h3>
+
+    <table>
+      <thead>
+        {Object.keys(props).map((key) => {
+          return <th key={key}>{key}</th>;
+        })}
+      </thead>
+      <tbody>
+        <tr>
+
+        {Object.values(props).map((key) => {
+          return <td key={key}>
+          
+            { key === props.picture ? <img src={key} alt="user-icon" /> : key}
+            
+            </td>;
+        })}
+    </tr>
+
+      </tbody>
+    </table>
+  </div>
 );
 
-export default UserProfile
+export default UserProfile;
